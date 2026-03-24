@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/table"
 import { cn } from "@/lib/utils"
 import { DataTableColumnHeader } from "./data-table-column-header"
+import { DataTableEmpty } from "./data-table-empty"
 import { DataTablePagination } from "./data-table-pagination"
 import { DataTableToolbar } from "./data-table-toolbar"
 import type { DataTableFilterField } from "./types"
@@ -93,8 +94,10 @@ export function DataTable<TData>({
         filterFields={filterFields}
         searchPlaceholder={searchPlaceholder}
       />
-
-      <div ref={wrapperRef} className="rounded-lg border">
+      <div
+        ref={wrapperRef}
+        className="overflow-hidden rounded-lg border shadow-sm"
+      >
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -179,19 +182,15 @@ export function DataTable<TData>({
                 </TableRow>
               ))
             ) : (
-              <TableRow>
-                <TableCell
-                  colSpan={colSpan}
-                  className="h-24 text-center text-muted-foreground"
-                >
-                  No results found.
+              <TableRow className="hover:bg-transparent">
+                <TableCell colSpan={colSpan} className="p-0">
+                  <DataTableEmpty />
                 </TableCell>
               </TableRow>
             )}
           </TableBody>
         </Table>
       </div>
-
       <DataTablePagination table={table} />
     </div>
   )

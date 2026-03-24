@@ -1,5 +1,6 @@
 export { DataTable } from './data-table'
 export { DataTableColumnHeader } from './data-table-column-header'
+export { DataTableEmpty } from './data-table-empty'
 export { DataTableFilterMultiple } from './data-table-filter-multiple'
 export { DataTableFilterSelect } from './data-table-filter-select'
 export { DataTableFiltersDropdown } from './data-table-filters-dropdown'
