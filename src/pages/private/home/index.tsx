@@ -412,11 +412,13 @@ export function Home() {
 
   return (
     <div className="flex flex-col gap-6">
-      <div>
-        <h1 className="text-xl font-semibold">Users</h1>
-        <p className="text-sm text-muted-foreground">
-          Manage your team members and their roles.
-        </p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-xl font-semibold">Users</h1>
+          <p className="text-sm text-muted-foreground">
+            Manage your team members and their roles.
+          </p>
+        </div>
       </div>
       <DataTable
         table={table}
